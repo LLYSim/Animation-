@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Passcode checking</title>
+    <style>
+        .card {
+            width: 300px;
+            height: 200px;
+            border: 5px solid black;
+            padding: 20px;
+        }
+        
+        .red-border {
+            border-color: red;
+        }
+        
+        .green-border {
+            border-color: rgb(79, 203, 79);
+        }
+    </style>
+</head>
+<body>
+    <div class="card" id="card">
+        <h3>Enter Passcode:</h3>
+        <input type="password" id="passcodeInput">
+        <button onclick="checkPasscode()">Submit</button>
+    </div>
+
+    <script>
+        function checkPasscode() {
+            var passcode = document.getElementById("passcodeInput").value;
+
+            if (passcode === "12345") {
+                alert("The passcode is correct");
+                document.getElementById("card").classList.add("green-border");
+                document.getElementById("card").classList.remove("red-border");
+            } else {
+                alert("The passcode is incorrect");
+                document.getElementById("card").classList.add("red-border");
+                document.getElementById("card").classList.remove("green-border");
+            }
+        }
+    </script>
+</body>
+</html>
